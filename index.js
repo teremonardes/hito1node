@@ -1,17 +1,15 @@
-const { registrar, leer } = require("./operaciones");
+const { registrar, leer } = require('./operaciones')
 
+const [operacion, nombre, edad, tipo, color, enfermedad] = process.argv.slice(2)
 
-const [operacion, nombre, edad, tipo, color, enfermedad] = process.argv.slice(2);
-
-if (operacion === "registrar") {
+if (operacion === 'registrar') {
   if (!nombre || !edad || !tipo || !color || !enfermedad) {
-    console.log("❌ Error: Faltan datos. Uso: node index.js registrar nombre edad tipo color enfermedad");
-    return;
+    console.log('❌ Error: Faltan datos. Uso: node index.js registrar nombre edad tipo color enfermedad')
   }
 
-  registrar(nombre, edad, tipo, color, enfermedad);
-} else if (operacion === "leer") {
-  leer();
+  registrar(nombre, edad, tipo, color, enfermedad)
+} else if (operacion === 'leer') {
+  leer()
 } else {
   console.log(`
 📋 Veterinaria - Registro de Pacientes
@@ -26,6 +24,5 @@ Comandos disponibles:
 
 🔍 Ver todas las mascotas registradas:
    👉 node index.js leer
-  `);
+  `)
 }
-
